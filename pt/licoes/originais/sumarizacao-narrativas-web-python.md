@@ -13,7 +13,11 @@ authors:
 
 # Introdução
 
-Ao longo dos séculos a comunicação evoluiu paralelamente à evolução do homem. A comunicação que antes se fazia a partir de meios analógicos é hoje digital e tem presença online. A "culpa" é da web, que desde o final dos anos 90 do século passado, se tornou na principal fonte de informação e comunicação do século XXI. Esta mudança de paradigma obrigou a uma alteração profunda na forma como as informações publicadas são preservadas. Neste processo, os arquivos da web assumem especial relevância, ao preservarem as informações publicadas online desde a década de 1990. Apesar dos avanços recentes na preservação de informações arquivadas a partir da web, o problema de explorar de forma eficiente o património histórico preservado por estes arquivos permanece por resolver devido às enormes quantidades de dados históricos arquivados ao longo do tempo, e à inexistência de ferramentas que possam processar automaticamente esse volume de dados. As timelines (sistemas automáticos de sumarização temporal) surgem neste contexto, como a solução ideal para a produção automática de resumos de eventos ao longo do tempo e para a análise das informações publicadas online que os documentam, como é o caso das notícias. 
+Ao longo dos séculos a comunicação evoluiu paralelamente à evolução do homem. A comunicação que antes se fazia a partir de meios analógicos é hoje digital e tem presença online. A "culpa" é da web, que desde o final dos anos 90 do século passado, se tornou na principal fonte de informação e comunicação do século XXI. Porém, cerca de [80% da informação disponível na web desaparece ou é alterada no prazo de apenas 1 ano](https://dl.acm.org/doi/10.1145/1145581.1145623). Este facto origina a perda de informação fundamental para documentar os eventos da era digital.
+
+A mudança do paradigma de comunicação obrigou a uma alteração profunda na forma como as informações publicadas são preservadas. Neste processo, os arquivos da web assumem especial relevância, ao preservarem as informações publicadas online desde a década de 1990. 
+
+Apesar dos avanços recentes na preservação de informações arquivadas a partir da web, o problema de explorar de forma eficiente o património histórico preservado por estes arquivos permanece por resolver devido às enormes quantidades de dados históricos arquivados ao longo do tempo, e à inexistência de ferramentas que possam processar automaticamente esse volume de dados. As timelines (sistemas automáticos de sumarização temporal) surgem neste contexto, como a solução ideal para a produção automática de resumos de eventos ao longo do tempo e para a análise das informações publicadas online que os documentam, como é o caso das notícias. 
 
 Neste tutorial, pretendemos mostrar como explorar o [Arquivo.pt](http://arquivo.pt), o arquivo da web portuguesa, e como criar automaticamente resumos de eventos do passado a partir de conteúdos históricos arquivados da web. Mais concretamente, demonstraremos como obter resultados relevantes ao combinar o uso da API do Arquivo.pt com a utilização do [Conta-me Histórias](https://contamehistorias.pt), um sistema que permite criar automaticamente narrativas temporais sobre qualquer tema objeto de notícia. Para a concretização desse objetivo disponibilizamos um jupyter notebook que os utilizadores poderão usar para interagir com ambas as ferramentas. 
 
@@ -23,7 +27,7 @@ Na segunda parte, recorremos ao Conta-me Histórias para exemplificar o processo
 
 # Pré-requisitos
 
-A participação neste tutorial pressupõe conhecimentos básicos ao nível da programação (nomeadamente Python) bem como familiarização com a instalação de packages python (via [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)) e consumo de APIs. A execução do código pressupõe o recurso ao jupyter anaconda. Para uma instalação deste software recomendamos o tutorial [Introductions to Jupyter Notebooks](https://programminghistorian.org/en/lessons/jupyter-notebooks#installing-jupyter-notebooks) ou em alternativa o recurso ao [Google Colab](https://colab.research.google.com/). Este tutorial foi testado com a versão 3.6.5 de Python.
+A participação neste tutorial pressupõe conhecimentos básicos ao nível da programação (nomeadamente Python) bem como familiarização com a instalação de packages python (via [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)), [formato JSON](https://www.w3schools.com/js/js_json_intro.asp) e consumo de APIs. A execução do código pressupõe o recurso ao jupyter anaconda. Para uma instalação deste software recomendamos o tutorial [Introductions to Jupyter Notebooks](https://programminghistorian.org/en/lessons/jupyter-notebooks#installing-jupyter-notebooks) ou em alternativa o recurso ao [Google Colab](https://colab.research.google.com/). Este tutorial foi testado com a versão 3.6.5 de Python.
 
 # Objetivos de Aprendizagem
 
@@ -35,13 +39,9 @@ No final deste tutorial os participantes devem estar aptos a:
 
 O [Arquivo.pt](https://www.arquivo.pt) é um serviço público e gratuito disponibilizado pela [Fundação para a Ciência e a Tecnologia I.P.](https://www.fct.pt), que permite a qualquer pessoa pesquisar e aceder a informação histórica preservada da Web desde os anos 90. 
 
-Cerca de 80% da informação disponível na Web desaparece ou é alterada no prazo de apenas 1 ano. Este facto origina a perda de informação fundamental para documentar os eventos da era digital. 
+O Arquivo.pt preserva milhões de páginas recolhidas da web desde o início da década de 1990 e disponibiliza um serviço público de pesquisa sobre esta informação. O Arquivo.pt foca-se na preservação de informação interessante para a comunidade portuguesa mas é possível encontrar informação escrita em várias línguas.  
 
 [Este vídeo](https://www.youtube.com/embed/EnSys0HDnCc) introduz brevemente o Arquivo.pt.
-
-
-
-
 
 
 ## Contributos
